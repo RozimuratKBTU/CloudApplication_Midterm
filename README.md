@@ -51,7 +51,7 @@ def greet_user(request):
 ```
 
 
-#2️⃣ Deploy the function with:
+# 2️⃣ Deploy the function with:
 ```bash
 gcloud functions deploy greet_user \
   --runtime python311 \
