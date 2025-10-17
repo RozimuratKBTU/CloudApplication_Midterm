@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flask-meeting-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: flask-meeting-app
+  template:
+    metadata:
+      labels:
+        app: flask-meeting-app
+    spec:
+      containers:
+      - name: flask-meeting-app
+        image: gcr.io/polar-ray-475006-i4/flask-meeting-app:latest
+        ports:
+        - containerPort: 8080

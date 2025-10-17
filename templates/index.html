@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>EasyMeet - Список встреч</title>
+</head>
+<body>
+    <h1>Список встреч</h1>
+    <a href="{{ url_for('create') }}">Создать новую встречу</a>
+    <ul>
+        {% for m in meetings %}
+        <li>
+            <strong>{{ m.title }}</strong> — {{ m.date }} {{ m.time }}<br>
+            {{ m.description }}<br>
+            <form action="{{ url_for('delete', index=loop.index0) }}" method="post">
+                <button type="submit">Удалить</button>
+            </form>
+        </li>
+        {% else %}
+        <p>Нет встреч</p>
+        {% endfor %}
+    </ul>
+</body>
+</html>

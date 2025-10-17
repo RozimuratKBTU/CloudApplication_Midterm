@@ -1,0 +1,48 @@
+swagger: "2.0"
+info:
+  title: Meeting App API
+  description: API для приложения встреч
+  version: "1.0.0"
+
+host: flask-meeting-app-1055066801545.us-central1.run.app
+schemes:
+  - https
+
+paths:
+  /api/greet:
+    post:
+      summary: Приветствие пользователя
+      description: Отправка данных на Cloud Function и возврат ответа
+      operationId: greet
+      consumes:
+        - application/json
+      produces:
+        - application/json
+      parameters:
+        - in: body
+          name: body
+          required: true
+          schema:
+            type: object
+            properties:
+              name:
+                type: string
+              lang:
+                type: string
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: object
+            properties:
+              greeting:
+                type: string
+
+securityDefinitions:
+  api_key:
+    type: "apiKey"
+    name: "key"
+    in: "query"
+
+security:
+  - api_key: []
