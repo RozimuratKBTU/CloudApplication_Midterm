@@ -37,4 +37,15 @@ flaskProject/
 
 ### 1️⃣ Deploy Flask App to App Engine
 ```bash
+
 gcloud app deploy app.yaml
+
+
+def greet_user(request):
+    request_json = request.get_json(silent=True)
+    if request_json and 'name' in request_json:
+        name = request_json['name']
+        return {'message': f'Hello, {name}! Welcome to EasyMeet!'}
+    else:
+        return {'error': 'No name provided'}, 400
+
