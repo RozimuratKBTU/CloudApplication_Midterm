@@ -49,3 +49,10 @@ def greet_user(request):
     else:
         return {'error': 'No name provided'}, 400
 
+
+
+gcloud functions deploy greet_user \
+  --runtime python311 \
+  --trigger-http \
+  --allow-unauthenticated
+
