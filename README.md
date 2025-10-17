@@ -60,7 +60,8 @@ def greet_user(request):
         name = request_json['name']
         return {'message': f'Hello, {name}! Welcome to EasyMeet!'}
     else:
-        return {'error': 'No name provided'}, 400
+        return {'error': 'No name provided'}, 400 ```
+
 Deploy with:
 
 bash
