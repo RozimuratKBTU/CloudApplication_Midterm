@@ -29,3 +29,12 @@ flaskProject/
 ├── service.yaml # Kubernetes service configuration
 ├── requirements.txt # Python dependencies
 └── tests/ # Pytest-based test files
+
+
+---
+
+## 🚀 Deployment Steps
+
+### 1️⃣ Deploy Flask App to App Engine
+```bash
+gcloud app deploy app.yaml
