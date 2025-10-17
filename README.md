@@ -48,7 +48,7 @@ def greet_user(request):
         return {'message': f'Hello, {name}! Welcome to EasyMeet!'}
     else:
         return {'error': 'No name provided'}, 400
-
+```
 
 Deployment
 Deploy the function with:
