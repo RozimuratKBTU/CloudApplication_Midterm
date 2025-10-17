@@ -50,8 +50,8 @@ def greet_user(request):
         return {'error': 'No name provided'}, 400
 ```
 
-Deployment
-Deploy the function with:
+## Deployment
+# Deploy the function with:
 
 gcloud functions deploy greet_user \
   --runtime python311 \
